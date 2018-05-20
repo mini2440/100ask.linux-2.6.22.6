@@ -184,7 +184,9 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ \
 
 #ARCH		?= $(SUBARCH)
 ARCH		?= arm
-CROSS_COMPILE	?= arm-linux-
+# mz8023yt@163.com 20180520 begin >>> [1/1] modify the cross compiler
+CROSS_COMPILE	?= /home/user/mini2440/gcc-3.4.5-glibc-2.3.6/bin/arm-linux-
+# mz8023yt@163.com 20180520 end   <<< [1/1] modify the cross compiler
 
 # Architecture as present in compile.h
 UTS_MACHINE := $(ARCH)
