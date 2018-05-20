@@ -194,7 +194,11 @@ obj-$(CONFIG_S2IO) += s2io.o
 obj-$(CONFIG_MYRI10GE) += myri10ge/
 obj-$(CONFIG_SMC91X) += smc91x.o
 obj-$(CONFIG_SMC911X) += smc911x.o
-obj-$(CONFIG_DM9000) += dm9dev9000c.o
+
+# mz8023yt@163.com 20180520 begin >>> [2/2] realize the dm9000 net driver
+obj-$(CONFIG_DM9000) += mini2440_dm9000.o
+# mz8023yt@163.com 20180520 end   <<< [2/2] realize the dm9000 net driver
+
 #obj-$(CONFIG_DM9000) += dm9000.o
 #obj-$(CONFIG_DM9000) += dm9ks.o
 obj-$(CONFIG_FEC_8XX) += fec_8xx/
