@@ -182,8 +182,9 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ \
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 
-ARCH		?= $(SUBARCH)
-CROSS_COMPILE	?=
+#ARCH		?= $(SUBARCH)
+ARCH		?= arm
+CROSS_COMPILE	?= arm-linux-
 
 # Architecture as present in compile.h
 UTS_MACHINE := $(ARCH)
@@ -483,10 +484,14 @@ endif # $(dot-config)
 all: vmlinux
 
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
-CFLAGS		+= -Os
+COPTIMIZE	= -Os
 else
-CFLAGS		+= -O2
+COPTIMIZE	= -O2
 endif
+# COPTIMIZE may be overridden on the make command line with
+# 	make ... COPTIMIZE=""
+# The resulting object may be easier to debug with KGDB
+CFLAGS		+= $(COPTIMIZE)
 
 include $(srctree)/arch/$(ARCH)/Makefile
 
@@ -498,6 +503,7 @@ endif
 
 ifdef CONFIG_DEBUG_INFO
 CFLAGS		+= -g
+AFLAGS		+= -gdwarf2
 endif
 
 # Force gcc to behave correct even for buggy distributions
