@@ -106,7 +106,11 @@ obj-$(CONFIG_FB_MAXINE)		  += maxinefb.o
 obj-$(CONFIG_FB_TX3912)		  += tx3912fb.o
 obj-$(CONFIG_FB_S1D13XXX)	  += s1d13xxxfb.o
 obj-$(CONFIG_FB_IMX)              += imxfb.o
-obj-$(CONFIG_FB_S3C2410)	  += s3c2410fb.o
+
+# mz8023yt@163.com 20180520 begin >>> [2/2] realize the mini2440 x35 lcd driver
+obj-$(CONFIG_FB_S3C2410)	  += mini2440_lcd_x35.o
+# mz8023yt@163.com 20180520 end   <<< [2/2] realize the mini2440 x35 lcd driver
+
 obj-$(CONFIG_FB_PNX4008_DUM)	  += pnx4008/
 obj-$(CONFIG_FB_PNX4008_DUM_RGB)  += pnx4008/
 obj-$(CONFIG_FB_IBM_GXT4500)	  += gxt4500.o
