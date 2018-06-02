@@ -31,7 +31,7 @@ vmlinux*
 
 mz8023yt@163.com 20180602 begin >>> [2/2] modify the ignore rules
 # don't ignore the vmlinux.lds* file
-!vmlinux.lds*
+!vmlinux.lds.*
 mz8023yt@163.com 20180602 end   <<< [2/2] modify the ignore rules
 
 System.map
