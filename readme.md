@@ -4,15 +4,19 @@
 
 如何使用本仓库：
 
-    /* 1. 克隆仓库 */
-    user@vmware:~/mini2440$ git clone git@github.com:mini2440/100ask.linux-2.6.22.6.git
+1. 克隆仓库
 
-    /* 2. 修改交叉编译器 */
-    user@vmware:~/mini2440$ cd 100ask.linux-2.6.22.6/
-    user@vmware:~/mini2440/100ask.linux-2.6.22.6$ vim Makefile
+       user@vmware:~/mini2440$ git clone git@github.com:mini2440/100ask.linux-2.6.22.6.git
 
-    /* 3. 配置内核 */
-    user@vmware:~/mini2440/100ask.linux-2.6.22.6$ cp config_ok .config
+2. 修改交叉编译器
 
-    /* 4.编译 */
-    user@vmware:~/mini2440/100ask.linux-2.6.22.6$ make uImage
+       user@vmware:~/mini2440$ cd 100ask.linux-2.6.22.6/
+       user@vmware:~/mini2440/100ask.linux-2.6.22.6$ vim Makefile
+
+3. 配置内核
+
+       user@vmware:~/mini2440/100ask.linux-2.6.22.6$ cp config_ok .config
+
+4. 编译
+
+       user@vmware:~/mini2440/100ask.linux-2.6.22.6$ make uImage
